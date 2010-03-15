@@ -1,6 +1,6 @@
 # SRCHR
 
-A crowdsourced exercise in collecting JavaScript wisdom. For more information, visit [srchr_spec].
+A crowdsourced exercise in collecting JavaScript wisdom. For more information, see [srchr_spec].
 
 # LICENSE
 
@@ -8,4 +8,4 @@ A crowdsourced exercise in collecting JavaScript wisdom. For more information, v
 2. http://jquery.org/license
 
 [rmurphey_blog]: http://blog.rebeccamurphey.com "Rebecca Murphey's Blog"
-[srchr_spec]: http://blog.rebeccamurphey.com/2010/03/15/srchr-crowdsourcing-javascript-wisdom/
+[srchr_spec]: http://blog.rebeccamurphey.com/2010/03/15/srchr-crowdsourcing-javascript-wisdom/ "Searcher Spec Blogpost by Rebecca Murphey"
