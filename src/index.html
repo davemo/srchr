@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <title>srchr</title>
     <link rel="stylesheet" href="css/styles.css" type="text/css" media="screen" charset="utf-8" />
+    <!-- Including the loader in the head as it _should_ be our only entry point for JS into the app in the future. -->
+    <script type="text/javascript" src="http://yui.yahooapis.com/combo?3.0.0/build/yui/yui-min.js&3.0.0/build/loader/loader-min.js"></script>
 </head>
 <body>
     <header>
@@ -37,8 +39,23 @@
     <ul id="search_results">
     </ul>
     
-    <!-- use google-hosted javascript library of your choice -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-    <script src="js/srchr.js"></script>
+    <!-- We need to include the loader modules manifest so our YUI instance has access to it. -->
+    <!-- This also configures our app namespace, "SRCHR", as a global where we can dump our junk -->
+    <script type="text/javascript" src="static/js/modules.js"></script>
+    <!-- Main Loader bootstrapping goes here, along with namespacing for future use. -->
+    <script type="text/javascript">
+        YUI({
+            base: 'static/',
+            modules : SRCHR.Modules,
+            charset: 'utf-8', 
+            loadOptional: false,
+            combine: true, 
+            filter: 'min', 
+            timeout: 10000, 
+        }).use('srchr.app', function(Y) { // bootstrap the app code, and fire initialization here
+            SRCHR.Loader = Y; // namespace reference to our Y object so we can load modules in scripts later
+            SRCHR.Initialize();
+        });
+    </script>
 </body>
 </html>
