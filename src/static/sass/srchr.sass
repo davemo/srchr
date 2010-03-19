@@ -1,0 +1,65 @@
+@import blueprint.sass
+@import compass/css3.sass
+@import compass/utilities.sass
+@import compass/layout.sass
+
+// WARNING: HORRIBLY UNOPTIMIZED CODE BELOW, PROCEED AT OWN RISK
+
+body
+    font-size: 1.2em
+
+fieldset, ul, li, input
+    padding: 0px
+    margin: 0px
+    border: 0px
+    +no-bullets
+    min-height: 20px
+
+#wrap
+    +container
+    +showgrid
+    background: #f9f9f9
+    +border-radius(14px)
+    
+
+header, section, footer
+    +container
+
+#interface
+    +column(4)
+    input
+        +column(4, true)
+        +border-radius(14px)
+    button
+        +column(2,true)
+    
+#main
+    margin: 20px 0px
+
+#filters
+    +column(20, true)
+    +border-radius(14px)
+    
+    background: #444
+    color: white
+    ul
+        +horizontal-list
+    
+#terms, #results
+    background: #333
+    min-height: 100px
+    
+#terms  
+    +column(4)
+    +border-radius(14px)
+    
+#results
+    +column(20, true)
+    +border-radius(14px)
+    color: white
+    
+footer
+    background: black
+    +border-radius(14px)
+    color: white
+    

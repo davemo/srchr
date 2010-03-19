@@ -3,41 +3,49 @@
 <head>
     <meta charset="utf-8">
     <title>srchr</title>
-    <link rel="stylesheet" href="css/styles.css" type="text/css" media="screen" charset="utf-8" />
     <!-- Including the loader in the head as it _should_ be our only entry point for JS into the app in the future. -->
     <script type="text/javascript" src="http://yui.yahooapis.com/combo?3.0.0/build/yui/yui-min.js&3.0.0/build/loader/loader-min.js"></script>
 </head>
 <body>
-    <header>
-        <h1>srchr</h1>
-        <fieldset>
-            <input type="search" name="search" id="search" />
-            <input type="submit" id="search_submit" />
-        </fieldset>
-        
-        <fieldset>
-            <ul>
-                <li>
-                    <input type="checkbox" name="flickr" value="1" />
-                    <label for="flickr">Flickr</label>
-                </li>
-                <li>
-                    <input type="checkbox" name="yahoo" value="1" />
-                    <label for="flickr">Yahoo! Search</label>
-                </li>
-                <li>
-                    <input type="checkbox" name="upcoming" value="1" />
-                    <label for="flickr">Upcoming</label>
-                </li>
+    <div id="wrap">
+        <header>
+            <h1>srchr</h1>
+            <fieldset id="interface">
+                <input type="search" name="search" id="search" placeholder="enter search term" />
+            </fieldset>
+            
+            <fieldset id="filters">
+                <ul>
+                    <li>
+                        <input type="checkbox" name="flickr" value="1" />
+                        <label for="flickr">Flickr</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="yahoo" value="1" />
+                        <label for="flickr">Yahoo! Search</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="upcoming" value="1" />
+                        <label for="flickr">Upcoming</label>
+                    </li>
+                </ul>
+            </fieldset>
+        </header>
+        <section id="main">
+            
+            <ul id="terms">
+                
             </ul>
-        </fieldset>
-    </header>
-    
-    <ul id="search_terms">
-    </ul>
-    
-    <ul id="search_results">
-    </ul>
+
+            <ul id="results">
+                
+            </ul>
+            
+        </section>
+        <footer>
+            This is the footer.
+        </footer>
+    </div>
     
     <!-- We need to include the loader modules manifest so our YUI instance has access to it. -->
     <!-- This also configures our app namespace, "SRCHR", as a global where we can dump our junk -->

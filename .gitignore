@@ -1,0 +1,2 @@
+#Ignore the SASS Cache
+./src/static/sass/.sass_cache/*
